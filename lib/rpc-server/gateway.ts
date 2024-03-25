@@ -79,7 +79,7 @@ export class Gateway extends EventEmitter {
         let app = this.opts.context;
         for (let i = 0; i < paths.length; i++) {
             ((index) => {
-                fs.watch(paths[index].path, (event: string, name: string) => {
+                fs.watch(paths[index].path, (event: any, name: any) => {
                     if (event === 'change') {
                         this.reloadRemoter(app, paths[index]);
                     }
